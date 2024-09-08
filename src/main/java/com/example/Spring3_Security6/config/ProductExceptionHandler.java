@@ -12,13 +12,13 @@ public class ProductExceptionHandler {
     private ErrorDto errorDto;*/
 
     //@ExceptionHandler(MissingServletRequestParameterException.class)
-    public ProblemDetail handleMissingServletRequestParameterException(MissingServletRequestParameterException ex){
+    public ProblemDetail handleMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
         //this is one way to handle exception
        /* errorDto.setStatus("FAIL");
         errorDto.setErrorMessage(ex.getMessage());
         errorDto.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.name());
         return errorDto;*/
-       return ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR,ex.getMessage());
+        return ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage());
     }
 
 }
