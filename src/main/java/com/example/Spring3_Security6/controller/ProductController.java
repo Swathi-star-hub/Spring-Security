@@ -1,7 +1,7 @@
 package com.example.Spring3_Security6.controller;
 
 import com.example.Spring3_Security6.dto.AuthRequest;
-import com.example.Spring3_Security6.dto.Product;
+import com.example.Spring3_Security6.entity.Product;
 import com.example.Spring3_Security6.entity.UserInfo;
 import com.example.Spring3_Security6.service.JwtService;
 import com.example.Spring3_Security6.service.ProductService;
@@ -36,28 +36,22 @@ public class ProductController {
         return service.addUser(userInfo);
     }
 
+    @PostMapping("/save")
+    public com.example.Spring3_Security6.entity.Product save(@RequestBody com.example.Spring3_Security6.entity.Product product){
+        return service.save(product);
+    }
+
     @GetMapping("/all")
-    //@PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    public List<Product> getAllTheProducts() {
+    public List<com.example.Spring3_Security6.entity.Product> getAllTheProducts() {
         return service.getProducts();
     }
 
-    @GetMapping("/fetch")
+    @GetMapping("/fetch/{productId}")
    // @PreAuthorize("hasAuthority('ROLE_USER')")
-    public Product getProductById(@RequestParam (value ="productId",required = false,defaultValue = "productId")Integer productId) {
+    public Product getProductById(@PathVariable Integer productId) {
         return service.getProduct(productId);
     }
 
-
-    /* @PostMapping("/authenticate")
-     public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
-         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
-         if (authentication.isAuthenticated()) {
-             return jwtService.generateToken(authRequest.getUsername());
-         } else {
-             throw new UsernameNotFoundException("invalid user request !");
-         }
-     }*/
     @PostMapping("/authenticate")
     public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
