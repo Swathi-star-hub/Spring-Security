@@ -59,13 +59,6 @@ public class BasicDetailsController {
     }
 
 
-
-    /*@GetMapping("/getBasicDtls/{mebId}")
-    public ResponseEntity<Object> getMembersById(@RequestParam(value="mebId",required = false) Integer mebId){
-        Object getById = basicDetailsService.getById(mebId);
-        return new ResponseEntity<>(getById,HttpStatus.OK);
-    }*/
-
 @PostMapping("/authenticate")
     public String authenticate(@RequestBody CredentialVO credential){
 

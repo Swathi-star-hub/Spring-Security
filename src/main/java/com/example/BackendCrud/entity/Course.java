@@ -2,11 +2,9 @@ package com.example.BackendCrud.entity;
 
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Proxy;
 
 @Entity(name ="Course" )
 @Table(name = "course_dtls")
-//@Proxy(lazy = false)
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "seq_id")
