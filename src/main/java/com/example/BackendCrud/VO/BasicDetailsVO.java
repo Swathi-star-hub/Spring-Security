@@ -6,8 +6,6 @@ public class BasicDetailsVO {
     private Integer age;
     private CourseDetails courseDetails;
 
-
-
     public Integer getMebId() {
         return mebId;
     }

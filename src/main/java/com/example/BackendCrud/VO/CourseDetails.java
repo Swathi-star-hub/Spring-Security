@@ -1,13 +1,6 @@
 package com.example.BackendCrud.VO;
 
 public class CourseDetails {
-    /*public Integer getCid() {
-        return cid;
-    }
-
-    public void setCid(Integer cid) {
-        this.cid = cid;
-    }*/
 
     public String getName() {
         return name;

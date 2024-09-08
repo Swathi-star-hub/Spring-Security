@@ -1,5 +1,4 @@
 package com.example.BackendCrud.service;
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -48,10 +47,6 @@ public class  BasicDetailsService {
         try {
             System.out.println("Inside saving logic");
             if(ObjectUtils.isEmpty(basicDetailsRepo.findById(basicDetailsVO.getMebId()))) {
-            /*Optional<FamilyDtls> mebId = basicDetailsRepo.findById(basicDetailsVO.getMebId());
-            if(mebId.isPresent()) {
-                BasicDetailsService.log.debug("Already application is there with this mebId!!");
-            } else if (mebId == null) {*/
                 familyDtls = new FamilyDtls();
             }
                 familyDtls.setMebId(basicDetailsVO.getMebId());
@@ -76,8 +71,6 @@ public class  BasicDetailsService {
             response.setMebId(basicDetailsVO.getMebId());
             response.setStatus("BasicDetails Saved Successfully!");
         }catch(Exception e) {
-           /* error.setErrorCode(ErrorConstants.INTERNAL_SERVER_ERROR.getCode());
-            error.setMessage(ErrorConstants.INTERNAL_SERVER_ERROR.getMsg());*/
           e.printStackTrace();
         }
         return response;
@@ -93,7 +86,6 @@ public class  BasicDetailsService {
         if(findById.isPresent()) {
             return  findById.get();
         }else {
-            // return null;
             return null;
         }
     }

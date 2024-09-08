@@ -1,12 +1,9 @@
 package com.example.BackendCrud.entity;
 
-
 import jakarta.persistence.*;
-import org.hibernate.annotations.Proxy;
 
 @Entity(name ="FamilyDtls" )
 @Table(name = "family_dtls")
-//@Proxy(lazy = false)
 
 public class FamilyDtls {
     @Id

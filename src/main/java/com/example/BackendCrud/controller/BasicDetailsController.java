@@ -41,8 +41,6 @@ public class BasicDetailsController {
             return new ResponseEntity<>(response,HttpStatus.OK);
         }catch(Exception e) {
             System.out.println("Exception occured in controller");
-            /*error.setErrorCode(ErrorConstants.INTERNAL_SERVER_ERROR.getCode());
-            error.setMessage(ErrorConstants.INTERNAL_SERVER_ERROR.getMsg());*/
             return new ResponseEntity<>(error,HttpStatus.OK);
         }
 
