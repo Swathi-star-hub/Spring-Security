@@ -6,6 +6,8 @@ public class BasicDetailsVO {
     private Integer age;
     private CourseDetails courseDetails;
 
+
+
     public Integer getMebId() {
         return mebId;
     }
@@ -35,6 +37,13 @@ public class BasicDetailsVO {
     }
 
     public void setCourseDetails(CourseDetails courseDetails) {
+        this.courseDetails = courseDetails;
+    }
+
+    public BasicDetailsVO(String name, Integer mebId, Integer age, CourseDetails courseDetails) {
+        this.name = name;
+        this.mebId = mebId;
+        this.age = age;
         this.courseDetails = courseDetails;
     }
 }

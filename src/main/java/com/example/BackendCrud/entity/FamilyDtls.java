@@ -61,7 +61,5 @@ public class FamilyDtls {
     public String toString() {
         return "FamilyDtls [mebId=" + mebId + ", name=" + name + ", age=" + age + ", course=" + course + "]";
     }
-
-
 }
 

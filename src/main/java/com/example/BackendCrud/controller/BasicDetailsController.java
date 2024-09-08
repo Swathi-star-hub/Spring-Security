@@ -59,6 +59,9 @@ public class BasicDetailsController {
         Object getById = basicDetailsService.getById(mebId);
         return new ResponseEntity<>(getById,HttpStatus.OK);
     }
+
+
+
     /*@GetMapping("/getBasicDtls/{mebId}")
     public ResponseEntity<Object> getMembersById(@RequestParam(value="mebId",required = false) Integer mebId){
         Object getById = basicDetailsService.getById(mebId);
@@ -68,12 +71,12 @@ public class BasicDetailsController {
 @PostMapping("/authenticate")
     public String authenticate(@RequestBody CredentialVO credential){
 
-        //Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(credential.getUsername(), credential.getPassword()));
-       // if(authentication.isAuthenticated()){
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(credential.getUsername(), credential.getPassword()));
+        if(authentication.isAuthenticated()){
           return tokenGeneration.generateToken(credential.getUsername()) ;
-       /* }else{
+        }else{
             throw new UsernameNotFoundException("user not authenticated");
-        }*/
+        }
     }
     @GetMapping("/welcome")
     public String welcome(){

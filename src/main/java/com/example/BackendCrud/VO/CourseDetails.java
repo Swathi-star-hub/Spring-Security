@@ -29,4 +29,8 @@ public class CourseDetails {
     private String name;
     private double price;
 
+    public CourseDetails(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
 }

@@ -88,13 +88,13 @@ public class  BasicDetailsService {
         return "record deleted";
     }
 
-    public List<FamilyDtls> getById(Integer mebId) {
+    public FamilyDtls getById(Integer mebId) {
         Optional<FamilyDtls> findById = basicDetailsRepo.findById(mebId);
         if(findById.isPresent()) {
-            return (List<FamilyDtls>) findById.get();
+            return  findById.get();
         }else {
             // return null;
-            return basicDetailsRepo.findAll();
+            return null;
         }
     }
 
